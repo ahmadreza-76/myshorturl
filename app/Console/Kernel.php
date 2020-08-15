@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Console\Commands\DailyAnalytics;
+use App\Console\Commands\HourlyAnalytics;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        DailyAnalytics::class,
+        HourlyAnalytics::class,
     ];
 
     /**
@@ -24,8 +27,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('analytic:hourly')->hourlyAt(55); //run command every hour
+        $schedule->command('analytic:daily')->daily(); //run command every day at midnight
+
     }
 
     /**

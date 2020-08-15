@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,8 +29,9 @@ Route::group([
 
 ], function () {
 
-    Route::post('create','URLController@create');
-    Route::get('all','URLController@getAll');
+    Route::post('create','URLController@create'); //create new short url
+    Route::get('all','URLController@getAll'); //create all short url's created by himself
+    Route::get('analytic/{short_url}','URLController@analytic')->middleware('checkUrlOwner');//get analytics of this short url
 
 
 });

@@ -15,4 +15,12 @@ class Url extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function analytics(){
+        return $this->hasMany('App\Analytic','short_url','short_url');
+    }
+
+    public function redirectLogs(){
+        return $this->hasMany('App\RedirectLog','short_url','short_url');
+    }
+
 }

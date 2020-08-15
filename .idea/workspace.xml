@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ddc30b5-fb84-4593-9d38-0fd05f7d1dd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/DailyAnalytics.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/HourlyAnalytics.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckUrlOwner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/AnalyticService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Analytic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Analytic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/URLController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/URLController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RedirectLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RedirectLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Url.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Url.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_14_193136_create_analytics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_14_193136_create_analytics_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +190,7 @@
       <updated>1597321130749</updated>
       <workItem from="1597321135855" duration="113000" />
       <workItem from="1597321270770" duration="23653000" />
-      <workItem from="1597399473534" duration="18191000" />
+      <workItem from="1597399473534" duration="33902000" />
     </task>
     <servers />
   </component>

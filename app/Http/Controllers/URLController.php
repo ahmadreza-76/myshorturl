@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Analytic;
 use App\Jobs\LogRedirect;
 use App\Services\RedirectLogService;
 use App\Services\URLService;
@@ -51,6 +52,16 @@ class URLController extends Controller
         ]);
         $url->save();
 
+        $today = new Analytic(['short_url'=>$short_url,'type'=>'today']);
+        $today->save();
+        $yesterday = new Analytic(['short_url'=>$short_url,'type'=>'yesterday']);
+        $yesterday->save();
+        $week = new Analytic(['short_url'=>$short_url,'type'=>'week']);
+        $week->save();
+        $month = new Analytic(['short_url'=>$short_url,'type'=>'month']);
+        $month->save();
+
+
         /**
          * we use our redis in memory database as LRU (Least Recently Used Cache)
          * we set maxmemory to 0 (unlimited) and maxmemory-policy to allkeys-lru
@@ -65,6 +76,9 @@ class URLController extends Controller
 
     }
 
+    /**
+     * redirect to original url from short url
+     */
     public function redirect($short_url){
 
         //try to get original url from cache
@@ -103,8 +117,19 @@ class URLController extends Controller
 
     }
 
+    /**
+     * get all of your urls
+     */
     public function getAll(){
         $urls = auth()->user()->urls;
         return ResponseService::response(1,200,null,$urls);
+    }
+
+    /**
+     * check analytics of a short url
+     */
+    public function analytic($short_url){
+        $analytics = Analytic::where('short_url',$short_url)->get();
+        return ResponseService::response(1,200,null,$analytics);
     }
 }
